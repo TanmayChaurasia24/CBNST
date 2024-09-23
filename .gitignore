@@ -1,0 +1,13 @@
+# Ignore all compiled object files (.o)
+*.o
+
+# Ignore executable output files on various operating systems
+*.out
+*.exe
+
+# Ignore debugging files
+*.dSYM/
+
+# Ignore backup files created by text editors
+*~
+*.swp
