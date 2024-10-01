@@ -1,7 +1,6 @@
 // The Bisection Method is a numerical method used to find the roots of a continuous function. It is based on the Intermediate Value Theorem, which states that if a function changes sign over an interval [a, b], then there is at least one root in that interval.
 
 // The basic idea is to repeatedly divide the interval in half and select the subinterval where the function changes sign until the root is found with the desired accuracy.
-
 #include <stdio.h>
 #include <math.h>
 
@@ -13,10 +12,7 @@ double f(double x)
 
 int main()
 {
-    //a, b: The endpoints of the initial interval [a, b] where the root lies.
-    // c: The midpoint of the current interval, which will be refined iteratively.
-    // tol: The tolerance level, which defines the accuracy of the root.
-    // maxIterations: The maximum number of iterations allowed to prevent the method from running indefinitely.
+    // Variables
     double a, b, c, tol;
     int maxIterations, iteration = 1;
 
@@ -67,6 +63,18 @@ int main()
     if (iteration > maxIterations)
     {
         printf("The method did not converge after %d iterations.\n", maxIterations);
+    }
+    else
+    {
+        // Check if the method found the root exactly or approximately
+        if (f(c) == 0.0)
+        {
+            printf("Exact root found at c = %.6f after %d iterations.\n", c, iteration);
+        }
+        else
+        {
+            printf("Approximate root found at c = %.6f after %d iterations.\n", c, iteration);
+        }
     }
 
     return 0;
