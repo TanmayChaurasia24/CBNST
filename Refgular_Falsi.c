@@ -3,7 +3,6 @@ The Regula Falsi Method (also called the False Position Method) is another root-
 
 
 */
-
 #include <stdio.h>
 #include <math.h>
 
@@ -32,7 +31,7 @@ int main() {
     // Regula Falsi method loop
     while (iteration <= maxIterations) {
         // Calculate the point where the line connecting f(a) and f(b) intersects the x-axis
-        c = (a*f(b) - b*f(a)) / (f(b) - f(a));
+        c = (a * f(b) - b * f(a)) / (f(b) - f(a));
 
         // Check if the root is found or the result is within the tolerance level
         if (f(c) == 0.0) {
@@ -55,9 +54,10 @@ int main() {
     // If maximum iterations reached without convergence
     if (iteration > maxIterations) {
         printf("The method did not converge after %d iterations.\n", maxIterations);
+    } else {
+        // Print the root
+        printf("Approximate root found at c = %.6f after %d iterations.\n", c, iteration);
     }
 
     return 0;
 }
-
-
